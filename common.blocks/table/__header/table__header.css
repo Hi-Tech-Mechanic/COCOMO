@@ -1,0 +1,26 @@
+.table__header {
+  padding: 10px;
+  height: 70px;
+
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+
+  font-size: 20px;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    height: 60px;
+  }
+
+  @media (min-width: 520px) and (max-width: 768px) {
+    font-size: 14px;
+    height: 50px;
+  }
+
+  @media (max-width: 520px) {
+    font-size: 12px;
+    height: 45px;
+  }
+}

@@ -1,0 +1,278 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::selection{
+    background-color: white;
+    color: black;
+}
+
+:root {
+  --body-color: rgb(37, 37, 37);
+  --main-color: rgb(24, 24, 24)
+}
+
+.body {
+  background: url(733a837a5dee8ee070a4.png);
+  background-repeat: repeat;
+  background-size: 512px;
+  background-color: var(--body-color);
+}
+
+.header {
+  text-align: center;
+
+  background-color: rgba(24, 24, 24, 0.7);
+  backdrop-filter: blur(1px);
+}
+
+.main {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 1280px;
+  width: 100%;
+
+  font-size: 20px;
+
+  color: white;
+  background-color: rgb(24, 24, 24);
+  border-radius: 10px;
+}
+
+.logo {
+  color: white;
+  font-size: 48px;
+  font-weight: 900;
+  text-shadow: 3px 3px 3px rgb(136, 136, 136);
+
+  transition: all 0.3s;
+
+  @media (min-width: 520px) and (max-width: 768px) {
+    font-size: 44px;
+  }
+
+  @media (max-width: 520px) {
+    font-size: 38px;
+  }
+
+  @media (max-width: 420px) {
+    font-size: 34px;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 32px;
+  }
+}
+.input-field {
+  height: 30px;
+  width: 100px;
+  height: auto;
+  padding: 5px;
+
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.input-field_select {
+  width: auto;
+}
+
+.centerer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.input-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+
+  font-size: 22px;
+}
+
+.result {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-evenly;
+
+  font-size: 22px;
+}
+
+.result__value {
+    display: flex;
+    gap: 20px;
+    text-align: center;
+    flex-direction: column;
+}
+
+.result__header {
+  font-weight: 900;
+  font-size: 34px;
+}
+
+.table {
+  position: relative;
+  margin-top: 20px;
+  padding: 10px;
+
+  border: 1px solid white;
+  border-radius: inherit;
+}
+
+.table__header {
+  padding: 10px;
+  height: 70px;
+
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+
+  font-size: 20px;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    height: 60px;
+  }
+
+  @media (min-width: 520px) and (max-width: 768px) {
+    font-size: 14px;
+    height: 50px;
+  }
+
+  @media (max-width: 520px) {
+    font-size: 12px;
+    height: 45px;
+  }
+}
+
+.table__logic-block {
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+.table__characteristic {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  display: block;
+  margin: auto;
+  width: 50%;
+  height: calc(100% - 40px);
+
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 10px rgb(255, 255, 255);
+
+  transition: width 0.5s;
+
+  @media (max-width: 768px){
+    width: 60%;
+  }
+
+  @media (max-width: 520px){
+    width: 70%;
+  }
+}
+
+.table__characteristic-name {
+  margin-top: 5px;
+  padding: 0 5px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: black;
+  font-size: 26px;
+  font-weight: 900;
+  text-align: center;
+
+  @media (min-width: 520px) and (max-width: 768px) {
+    font-size: 22px;
+  }
+
+  @media (min-width: 320px) and (max-width: 520px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 20px;
+  }
+}
+
+.table__attribute {
+  position: relative;
+  margin-top: 20px;
+  border: 1px solid;
+  border-radius: 10px;
+  box-shadow: 0 0 8px white;
+  background-color: var(--main-color);
+
+  z-index: 1;
+}
+
+.table__stroke {
+  margin-bottom: 30px;
+  
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-content: space-evenly;
+
+  font-size: 18px;
+
+  @media (max-width: 520px){
+    font-size: 16px;
+  }
+}
+
+.table__radio-button {
+  width: 30px;
+  height: 30px;
+
+  cursor: pointer;
+}
+
+.table__radio-button:disabled {
+  cursor: not-allowed;
+}
+
+.table__factor-type {
+  margin-bottom: 30px;
+  padding: 5px;
+
+  text-align: center;
+  font-size: 22px;
+  border-bottom: 1px solid;
+
+  @media (min-width: 520px) and (max-width: 768px) {
+    font-size: 20px;
+  }
+
+  @media (min-width: 320px) and (max-width: 520px) {
+    font-size: 18px;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 16px;
+  }
+}
+
+.table__handler-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+
+  text-align: center;
+}
+

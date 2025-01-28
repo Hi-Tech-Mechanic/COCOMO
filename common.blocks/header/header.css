@@ -1,0 +1,6 @@
+.header {
+  text-align: center;
+
+  background-color: rgba(24, 24, 24, 0.7);
+  backdrop-filter: blur(1px);
+}

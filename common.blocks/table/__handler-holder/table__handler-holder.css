@@ -1,0 +1,9 @@
+.table__handler-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+
+  text-align: center;
+}

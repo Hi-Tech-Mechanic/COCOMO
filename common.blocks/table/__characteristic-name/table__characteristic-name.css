@@ -1,0 +1,25 @@
+.table__characteristic-name {
+  margin-top: 5px;
+  padding: 0 5px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: black;
+  font-size: 26px;
+  font-weight: 900;
+  text-align: center;
+
+  @media (min-width: 520px) and (max-width: 768px) {
+    font-size: 22px;
+  }
+
+  @media (min-width: 320px) and (max-width: 520px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 20px;
+  }
+}

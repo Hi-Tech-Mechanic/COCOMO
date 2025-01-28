@@ -1,0 +1,26 @@
+.table__characteristic {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  right: 0;
+  z-index: 1;
+
+  display: block;
+  margin: auto;
+  width: 50%;
+  height: calc(100% - 40px);
+
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 10px rgb(255, 255, 255);
+
+  transition: width 0.5s;
+
+  @media (max-width: 768px){
+    width: 60%;
+  }
+
+  @media (max-width: 520px){
+    width: 70%;
+  }
+}
