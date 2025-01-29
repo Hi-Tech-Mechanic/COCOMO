@@ -1,7 +1,5 @@
 .result {
-  margin-top: 40px;
+  margin: 40px 0;
   display: flex;
   justify-content: space-evenly;
-
-  font-size: 22px;
 }

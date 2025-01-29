@@ -5,10 +5,16 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    entry: './js/index.js',
+    entry: {
+        index: './js/index.js',
+        info: './js/info.js',
+        basic: './js/basic.js',
+        intermediate: './js/intermediate.js',
+        post_architecture: './js/post-architecture.js',
+    },
 
     output: {
-        filename: "bundle.js",
+        filename: "[name].bundle.js",
         path: path.resolve(__dirname, "dist"),
     },
 
@@ -35,7 +41,29 @@ module.exports = {
 
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./index.html",
+            template: './index.html',
+            filename: 'index.html',
+            chunks: ['index']
+        }),
+        new HtmlWebpackPlugin({
+            template: './info.html',
+            filename: 'info.html',
+            chunks: ['info']
+        }),
+        new HtmlWebpackPlugin({
+            template: './basic.html',
+            filename: 'basic.html',
+            chunks: ['basic']
+        }),
+        new HtmlWebpackPlugin({
+            template: './intermediate.html',
+            filename: 'intermediate.html',
+            chunks: ['intermediate']
+        }),
+        new HtmlWebpackPlugin({
+            template: './post-architecture.html',
+            filename: 'post-architecture.html',
+            chunks: ['post_architecture']
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin(),

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="basic.css"/>
+    <script defer src="basic.bundle.js"></script>
+    <title>Document</title>
+  </head>
+  <body class="body">
+    <header class="header">
+      <nav>
+        <a href="info.html" target="_self" class="header__nav-button">Info</a>
+        <a href="basic.html" class="header__nav-button">Basic COCOMO</a>
+        <a href="intermediate.html" class="header__nav-button">Intermediate COCOMO</a>
+        <a href="index.html" class="header__nav-button">COCOMO II Early Design</a>
+        <a href="post-architecture.html" class="header__nav-button">COCOMO II Post Architecture</a>
+      </nav>
+    </header>
+
+    <h1 class="logo">Basic COCOMO</h1>
+
+    <main class="main">
+      <article class="input-block">
+        <form>
+          <label
+            >Необходимо написать
+            <input
+              class="input-field"
+              value="0"
+              autocomplete="on"
+              id="KiloOfSourceLineOfCode"
+              type="number"
+              min="0"
+              step="1"
+            />
+            тысяч строк кода
+          </label>
+        </form>
+        <form>
+          <label>
+            У нас
+            <select class="input-field input-field_select" id="ProjectType">
+              <option selected value="Organic">Organic</option>
+              <option value="Semidetached">Semidetached</option>
+              <option value="Embedded">Embedded</option>
+            </select>
+            команда
+          </label>
+        </form>
+      </article>
+
+      <article class="result">
+        <div class="result__value">
+          <h3 class="result__header" id="People-Month">0</h3>
+          <label>Человеко-месяцев</label>
+        </div>
+        <div class="result__value">
+          <h3 class="result__header" id="TimeAtMonth">0</h3>
+          <label>Календарных месяцев</label>
+        </div>
+      </article>
+
+      <details style="padding: 10px; border: 1px solid; border-radius: inherit; height: 50px">
+        <summary>Таблица коэффициентов</summary>
+        <!-- <table style="width: 100%;">
+          <thead style="width: 100%;">
+            <b>
+              <tr  style="width: 100%; display: flex; justify-content: space-evenly;">
+                <th>Тип проекта</th>
+                <th>a</th>
+                <th>b</th>
+                <th>c</th>
+                <th>d</th>
+              </tr>
+            </b>
+          </thead>
+          <tr>
+            <td>Распространенный</td>
+            <td>2,4</td>
+            <td>1,05</td>
+            <td>2,5</td>
+            <td>0,38</td>
+          </tr>
+          <tr>
+            <td>Полунезависимый</td>
+            <td>3,0</td>
+            <td>1,12</td>
+            <td>2,5</td>
+            <td>0,32</td>
+          </tr>
+          <tr>
+            <td>Встроенный</td>
+            <td>3,6</td>
+            <td>1,2</td>
+            <td>2,5</td>
+            <td>0,32</td>
+          </tr>
+        </table> -->
+      </details>
+    </main>
+  </body>
+</html>

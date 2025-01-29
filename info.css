@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::selection {
+  background-color: white;
+  color: black;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+li {
+  margin: 10px 0;
+  margin-left: 30px;
+}
+
+td, th {
+  padding: 2px;
+  border: 1px solid white;
+}
+
+:root {
+  --body-color: rgb(37, 37, 37);
+  --main-color: rgb(24, 24, 24)
+}
+
+.body {
+  background: url(733a837a5dee8ee070a4.png);
+  background-repeat: repeat;
+  background-size: 512px;
+  background-color: var(--body-color);
+}
+
+.header {
+  padding: 5px 0;
+  text-align: center;
+
+  background-color: rgba(24, 24, 24, 0.7);
+  backdrop-filter: blur(1px);
+}
+
+.header__nav-button {
+  display: inline-flex;
+  height: 50px;
+  padding: 0px 15px;
+  text-align: center;
+  align-items: center;
+  border-radius: 10px;
+
+  font-size: 20px;
+  color: white;
+  line-height: 0;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.3);
+
+  cursor: pointer;
+
+  transition: all 0.3s;
+
+  @media (min-width: 320px) and (max-width: 748px) {
+    font-size: 18px;
+    height: 40px;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 17px;
+    height: 40px;
+  }
+}
+
+.header__nav-button:hover {
+  font-size: 22px;
+
+  @media (min-width: 320px) and (max-width: 748px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 19px;
+  }
+}
+
+.header__nav-button:focus {
+  font-size: 22px;
+
+  @media (min-width: 320px) and (max-width: 748px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 19px;
+  }
+}
+
+.main {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 1280px;
+  width: 100%;
+
+  font-size: 20px;
+
+  color: white;
+  background-color: rgb(24, 24, 24);
+  border-radius: 10px;
+}
+
+.main__header {
+  margin-top: 20px;
+
+  text-align: center;
+}
+
+.logo {
+  margin: 20px 0;
+
+  color: white;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 900;
+  text-shadow: 3px 3px 3px rgb(136, 136, 136);
+
+  transition: all 0.3s;
+
+  @media (min-width: 520px) and (max-width: 768px) {
+    font-size: 44px;
+  }
+
+  @media (max-width: 520px) {
+    font-size: 38px;
+  }
+
+  @media (max-width: 420px) {
+    font-size: 34px;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 32px;
+  }
+}
+.centerer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.paragraph{
+    margin: 20px 0;
+}
+.paragraph_light {
+  margin: 10px 0;
+}
+
+.table-themes_none-bullet {
+  list-style-type: none;
+}
+

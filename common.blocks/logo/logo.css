@@ -1,5 +1,8 @@
 .logo {
+  margin: 20px 0;
+
   color: white;
+  text-align: center;
   font-size: 48px;
   font-weight: 900;
   text-shadow: 3px 3px 3px rgb(136, 136, 136);

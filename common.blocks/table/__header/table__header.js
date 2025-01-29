@@ -1,9 +1,24 @@
-const headerVeryLow = document.getElementById("VeryLow");
-const headerLow = document.getElementById("Low");
-const headerMiddle = document.getElementById("Middle");
-const headerHight = document.getElementById("Hight");
-const headerVeryHight = document.getElementById("VeryHight");
-const headerCritical = document.getElementById("Critical");
+const headerExtraLow = document.getElementsByName("extra-low");
+const headerVeryLow = document.getElementsByName("very-low");
+const headerLow = document.getElementsByName("low");
+const headerMiddle = document.getElementsByName("middle");
+const headerHight = document.getElementsByName("hight");
+const headerVeryHight = document.getElementsByName("very-hight");
+const headerExtraHight = document.getElementsByName("extra-hight");
+const headerCritical = document.getElementsByName("critical");
+
+const headersArr = [
+  headerExtraLow,
+  headerVeryLow,
+  headerLow,
+  headerMiddle,
+  headerHight,
+  headerVeryHight,
+  headerExtraHight,
+  headerCritical,
+];
+
+let textIsCompressed = false;
 
 function getScreenSize() {
   const width = window.innerWidth;
@@ -15,25 +30,47 @@ function getScreenSize() {
 function handleResize() {
   const screenSize = getScreenSize();
 
-  if (screenSize.width <= 520){
-    headerVeryLow.textContent = "Оч. низ.";
-    headerLow.textContent = "Низ.";
-    headerMiddle.textContent = "Сред.";
-    headerHight.textContent = "Выс.";
-    headerVeryHight.textContent = "Оч. выс.";
-    headerCritical.textContent = "Крит.";
+  if (screenSize.width <= 520) {
+    updateText("compress");
+  } else {
+    updateText("decompress");
   }
-  else{
-    headerVeryLow.textContent = "Очень низкий";
-    headerLow.textContent = "Низкий";
-    headerMiddle.textContent = "Средний";
-    headerHight.textContent = "Высокий";
-    headerVeryHight.textContent = "Очень высокий";
-    headerCritical.textContent = "Критический";
+}
+
+function updateText(state) {
+  let messages = [];
+  if (state == "compress") {
+    messages = [
+      "Сверх низ.",
+      "Оч. низ.",
+      "Низ.",
+      "Сред.",
+      "Выс.",
+      "Оч. выс.",
+      "Сверх выс.",
+      "Крит.",
+    ];
+  } else {
+    messages = [
+      "Сверх низкий",
+      "Очень низкий",
+      "Низкий",
+      "Средний",
+      "Высокий",
+      "Очень высокий",
+      "Сверх высокий",
+      "Критический",
+    ];
+  }
+
+  for (let i = 0; i < headersArr.length; i++) {
+    if (headersArr[i] != undefined && headersArr[i] != null)
+      headersArr[i].forEach((element) => {
+        element.textContent = messages[i];
+      });
   }
 }
 
 window.addEventListener("resize", handleResize);
 
 handleResize();
-

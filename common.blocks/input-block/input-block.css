@@ -4,4 +4,10 @@
   justify-items: center;
 
   font-size: 22px;
+
+  transition: all 0.3s;
+
+  @media (max-width: 748px) {
+    font-size: 18px;
+  }
 }

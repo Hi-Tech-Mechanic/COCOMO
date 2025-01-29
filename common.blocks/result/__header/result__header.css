@@ -1,4 +1,12 @@
 .result__header {
   font-weight: 900;
   font-size: 34px;
+
+  @media (min-width: 320px) and (max-width: 748px) {
+    font-size: 30px;
+  }
+
+  @media (max-width: 320px) {
+    font-size: 26px;
+  }
 }
