@@ -1,0 +1,23 @@
+.light-bulb {
+  display: none;
+  position: absolute;
+  top: 8px;
+  right: 9px;
+  z-index: -1;
+
+  width: 22px;
+  height: 22px;
+  margin: auto;
+
+  border-radius: 50%;
+  background: gold;
+  box-shadow: 0 0 2px gold;
+
+  animation: bulb-pulsate 2s infinite alternate;
+}
+
+@keyframes bulb-pulsate {
+  to {
+    box-shadow: 0 0 20px gold;
+  }
+}

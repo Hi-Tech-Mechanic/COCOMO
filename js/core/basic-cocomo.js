@@ -25,8 +25,9 @@ KSLOC.addEventListener("input", calculateAndDisplayResult);
 const projectTypeList = document.getElementById("ProjectType");
 projectTypeList.addEventListener("change", calculateAndDisplayResult);
 
-const TM = document.getElementById("TimeAtMonth");
-const PM = document.getElementById("People-Month");
+const TM = document.getElementById("time-at-month");
+const PM = document.getElementById("people-month");
+const employees = document.getElementById("employees");
 
 function calculateAndDisplayResult() {
   let result;
@@ -45,6 +46,7 @@ function calculateAndDisplayResult() {
 
   TM.textContent = Number(result.time.toFixed(2));
   PM.textContent = Number(result.effort.toFixed(2));
+  employees.textContent = (result.effort / result.time).toFixed(2);
 }
 
 function getOrganicResult(size) {

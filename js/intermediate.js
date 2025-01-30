@@ -3,9 +3,18 @@ import "./core/intermediate-cocomo.js";
 import "../styles/main.css";
 import "../styles/roots/colors.css";
 
+import "../common.blocks/background-video/background-video.css";
+
+import "../common.blocks/light-bulb/light-bulb.css";
+import "../common.blocks/light-bulb/light-bulb.js";
+
+import "../common.blocks/anchor/anchor.css";
+
 import "../common.blocks/body/body.css";
 
 import "../common.blocks/header/header.css";
+import "../common.blocks/header/__nav-menu/header__nav-menu.css";
+import "../common.blocks/header/__action-button/header__action-button.css";
 import "../common.blocks/header/__nav-button/header__nav-button.css";
 
 import "../common.blocks/main/main.css";

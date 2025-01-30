@@ -1,55 +1,52 @@
 const B = 0.91;
-const preliminaryAssessment = 2.94;
-const detailedAssessment = 2.45;
-// const effortMultiplier = [(preliminaryAssessment = 7), (detailedAssessment = 17)];
+const A = 2.94;
 
-let size;
-let scaleFactors;
-let effortAdjustmentFactor;
-//todo
-// const KSLOC = document.getElementById("KiloOfSourceLineOfCode");
-// KSLOC.addEventListener("change", calculateAndDisplayResult);
+const KSLOC = document.getElementById("KiloOfSourceLineOfCode");
+KSLOC.addEventListener("input", calculateAndDisplayResult);
 
-// const projectTypeList = document.getElementById("ProjectType");
-// projectTypeList.addEventListener("change", calculateAndDisplayResult);
+const PM = document.getElementById("people-month");
 
-// const TM = document.getElementById("TimeAtMonth");
-// const PM = document.getElementById("People-Month");
+const radioButtons = document.getElementsByClassName("table__handler-holder");
+for (let i = 0; i < radioButtons.length; i++) {
+  radioButtons[i].children[0].addEventListener("click", calculateAndDisplayResult);
+}
 
-// const radioButtons = document.getElementsByName(""); //todo
+let effortMultipliers = [];
+let scaleFactors = [];
 
-// let currentProjectType = projectTypeList.value;
-// let effortMultipliers = [];
+function calculateAndDisplayResult() {
+  let effort;
+  let size = Number(KSLOC.value);
+  let EM = 1;
+  let EAF = 1;
+  let effortMultipliers = [];
 
-// function calculateAndDisplayResult() {
-//   let effort;
-//   let size = Number(KSLOC.value);
-//   let multiplier = 1;
-//   let effortMultipliers = [];
+  for (let i = 0; i < radioButtons.length; i++) {
+    if (radioButtons[i].children[0].checked == true) {
+      if (
+        radioButtons[i].children[0].name == "PERS" ||
+        radioButtons[i].children[0].name == "PREX" ||
+        radioButtons[i].children[0].name == "RCPX" ||
+        radioButtons[i].children[0].name == "RUSE" ||
+        radioButtons[i].children[0].name == "FCIL"
+      ) {
+        scaleFactors.push(Number(radioButtons[i].children[1].textContent));
+        continue;
+      } else {
+        effortMultipliers.push(Number(radioButtons[i].children[1].textContent));
+        continue;
+      }
+    }
+  }
 
-//   for (let i = 0; i < radioButtons.length; i++) {
-//     if (radioButtons[i].children[0].checked == true) {
-//       effortMultipliers.push(Number(radioButtons[i].children[1].textContent));
-//       continue;
-//     }
-//   }
+  for (let i = 0; i < scaleFactors.length; i++) {
+    EM *= scaleFactors[i];
+  }
 
-//   for (let i = 0; i < effortMultipliers.length; i++) {
-//     multiplier *= effortMultipliers[i];
-//   }
+  for (let i = 0; i < effortMultipliers.length; i++) {
+    EAF *= effortMultipliers[i];
+  }
 
-//   switch (projectTypeList.value) {
-//     case "Organic":
-//       effort = multiplier * organicCoefficients.a * Math.pow(size, organicCoefficients.b);
-//       break;
-//     case "Semidetached":
-//       effort = multiplier * semiDetachedCoefficients.a * Math.pow(size, semiDetachedCoefficients.b);
-//       break;
-//     case "Embedded":
-//       effort = multiplier * embeddedCoefficients.a * Math.pow(size, embeddedCoefficients.b);
-//       break;
-//   }
-
-//   PM.textContent = effort.toFixed(2);
-// }
-
+  effort = A + 0.01 * Math.pow(size, B) * EM * EAF;
+  PM.textContent = effort.toFixed(2);
+}

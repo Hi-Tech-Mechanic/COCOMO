@@ -13,7 +13,7 @@ const embeddedCoefficients = {
   b: 1.2,
 };
 
-const PM = document.getElementById("People-Month");
+const PM = document.getElementById("people-month");
 
 const KSLOC = document.getElementById("KiloOfSourceLineOfCode");
 KSLOC.addEventListener("input", calculateAndDisplayResult);
@@ -29,7 +29,7 @@ for (let i = 0; i < radioButtons.length; i++) {
 function calculateAndDisplayResult() {
   let effort;
   let size = Number(KSLOC.value);
-  let multiplier = 1;
+  let EAF = 1;
   let effortMultipliers = [];
 
   for (let i = 0; i < radioButtons.length; i++) {
@@ -40,18 +40,18 @@ function calculateAndDisplayResult() {
   }
 
   for (let i = 0; i < effortMultipliers.length; i++) {
-    multiplier *= effortMultipliers[i];
+    EAF *= effortMultipliers[i];
   }
 
   switch (projectTypeList.value) {
     case "Organic":
-      effort = multiplier * organicCoefficients.a * Math.pow(size, organicCoefficients.b);
+      effort = EAF * organicCoefficients.a * Math.pow(size, organicCoefficients.b);
       break;
     case "Semidetached":
-      effort = multiplier * semiDetachedCoefficients.a * Math.pow(size, semiDetachedCoefficients.b);
+      effort = EAF * semiDetachedCoefficients.a * Math.pow(size, semiDetachedCoefficients.b);
       break;
     case "Embedded":
-      effort = multiplier * embeddedCoefficients.a * Math.pow(size, embeddedCoefficients.b);
+      effort = EAF * embeddedCoefficients.a * Math.pow(size, embeddedCoefficients.b);
       break;
   }
 

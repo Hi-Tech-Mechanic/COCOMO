@@ -1,0 +1,15 @@
+.table-themes_container {
+  max-height: 1000px;
+  position: relative;
+  overflow-x: auto;
+  overflow-y: auto;
+  box-shadow: 0 0 8px white;
+}
+
+.table-themes_container thead th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  background-color: var(--main-color);
+  z-index: 1;
+}
