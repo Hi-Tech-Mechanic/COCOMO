@@ -11,15 +11,13 @@ for (let i = 0; i < radioButtons.length; i++) {
   radioButtons[i].children[0].addEventListener("click", calculateAndDisplayResult);
 }
 
-let effortMultipliers = [];
-let scaleFactors = [];
-
 function calculateAndDisplayResult() {
   let effort;
   let size = Number(KSLOC.value);
   let EM = 1;
   let EAF = 1;
   let effortMultipliers = [];
+  let scaleFactors = [];
 
   for (let i = 0; i < radioButtons.length; i++) {
     if (radioButtons[i].children[0].checked == true) {
